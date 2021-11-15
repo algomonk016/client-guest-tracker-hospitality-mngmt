@@ -1,9 +1,10 @@
 import React from 'react'
+import PageRoutes from './routes'
 
 const App = () => {
 	return (
 		<div className="">
-			Here the fun begins
+			<PageRoutes />
 		</div>
 	)
 }
