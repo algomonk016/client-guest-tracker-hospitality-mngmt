@@ -2,6 +2,7 @@ import React from 'react'
 import LoginOption from './components/LoginOption'
 import reception from '../../../assets/receptionist.jpeg'
 import guest from '../../../assets/guest.jpeg'
+
 const Login = () => {
     return (
         <section className="text-gray-600 body-font">

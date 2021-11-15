@@ -4,6 +4,7 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import About from '../container/pages/about';
 import Guest from '../container/pages/guest';
 import Feedback from '../container/pages/guest/Feedback';
 import Restaurant from '../container/pages/guest/Restaurant';
@@ -17,6 +18,7 @@ const PageRoutes = () => {
         <Router>
             <Routes>
                 {/* login */}
+                <Route path="/" element={<About />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/login/guest" element={<GuestLogin />} />
                 <Route path="/login/reception" element={<ReceptionLogin />} />
