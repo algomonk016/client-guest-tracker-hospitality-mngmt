@@ -16,6 +16,8 @@ const GuestLogin = () => {
                 console.log(guestId, guestPass)
                 Navigate('/guest')
                 break;
+
+            default:
         }
     }
 

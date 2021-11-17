@@ -17,6 +17,7 @@ const ReceptionLogin = () => {
                 console.log(EmpId, EmpPass)
                 Navigate('/reception')
                 break;
+            default:
         }
     }
 

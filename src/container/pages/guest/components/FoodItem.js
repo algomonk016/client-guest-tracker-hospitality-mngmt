@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const FoodItem = ({ 
     img = 'https://dummyimage.com/420x260',
@@ -8,9 +9,9 @@ const FoodItem = ({
 }) => {
     return (
         <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a className="block relative h-48 rounded overflow-hidden">
+            <Link to='' className="block relative h-48 rounded overflow-hidden">
                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={img} />
-            </a>
+            </Link>
             <div className="mt-4">
                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">{category}</h3>
                 <h2 className="text-gray-900 title-font text-lg font-medium">{title}</h2>
