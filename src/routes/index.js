@@ -14,6 +14,7 @@ import ReceptionLogin from '../container/pages/login/ReceptionLogin';
 import Reception from '../container/pages/reception';
 import Customers from '../container/pages/customers'
 import FeedbackView from '../container/pages/feedback';
+import AddCustomer from '../container/pages/customers/AddCustomer';
 
 const PageRoutes = () => {
     return (
@@ -36,6 +37,7 @@ const PageRoutes = () => {
                 {/* for recepetion */}
                 <Route path='/reception' element={<Reception />} />
                 <Route path='/reception/customers' element={<Customers /> } />
+                <Route path='/reception/customers/new' element={<AddCustomer /> } />
                 <Route path='/reception/feedbacks' element={<FeedbackView /> } />
             </Routes>
         </Router>
