@@ -12,6 +12,8 @@ import Login from '../container/pages/login';
 import GuestLogin from '../container/pages/login/GuestLogin';
 import ReceptionLogin from '../container/pages/login/ReceptionLogin';
 import Reception from '../container/pages/reception';
+import Customers from '../container/pages/reception/customers'
+import FeedbackView from '../container/pages/reception/feedback';
 
 const PageRoutes = () => {
     return (
@@ -31,6 +33,10 @@ const PageRoutes = () => {
                 <Route path="/guest/feedback" element={<Feedback />} />
                 <Route path="/guest/restaurant" element={<Restaurant />} />
 
+                {/* for recepetion */}
+                <Route path='/reception' element={<Reception />} />
+                <Route path='/reception/customers' element={<Customers /> } />
+                <Route path='/reception/feedbacks' element={<FeedbackView /> } />
             </Routes>
         </Router>
     )
