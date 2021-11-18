@@ -4,7 +4,12 @@ import UsersSVG from '../../../assets/svg/UsersSVG'
 import ReceptionOptions from './components/ReceptionOptions'
 
 const Reception = () => {
-    const greeting = 'Hello, Ms. Shreya Sonkar'
+
+    const user = JSON.parse(sessionStorage.getItem('user'))
+    const gender = user.Gender
+    const name = user.Name
+
+    const greeting = "Hello " + (gender==='M'?'Mr.':'Ms.') + ' ' + name;
     const message = "Hope you're doing good"
     return (
         <section className="text-gray-600 body-font">
