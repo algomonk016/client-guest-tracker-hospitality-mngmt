@@ -4,7 +4,6 @@ import Label from '../../components/Label'
 
 const AddCustomer = () => {
 
-    const labelStyle = "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
     const fieldStyle = "appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
     const containerStyle = "w-full md:w-1/3 px-3 mb-6 md:mb-0"
     const headingStyle = "uppercase mb-5 text-xl bold border-b-2 pb-2 border-indigo-300"
