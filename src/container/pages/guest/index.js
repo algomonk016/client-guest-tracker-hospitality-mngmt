@@ -30,7 +30,7 @@ const Guest = () => {
         <section className="text-gray-600 body-font">
             <div className="relative bg-purple-200 pb-10">
                 <div className="flex flex-col items-center text-center justify-center">
-                    <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">Hi {user.FirstName + ' ' + user.LastName}</h2>
+                    <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">Hi {user?.FirstName + ' ' + user?.LastName}</h2>
                     <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4" />
                     <p className="text-base w-2/3"> {message.guestWelcomeMessage} </p>
                 </div>
