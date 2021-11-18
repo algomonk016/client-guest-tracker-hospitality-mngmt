@@ -1,25 +1,56 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import api from '../../../utils/API/ApiEndpoints'
+import message from '../../../utils/messages'
+
 const GuestLogin = () => {
 
     const [guestId, setGuestId] = useState(null)
     const [guestPass, setGuestPass] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const Navigate = useNavigate()
 
-    const doAction = (action='', e) => {
+    useEffect(()=>{
+        if(sessionStorage.getItem('user')){
+            Navigate(api.guest)
+        }
+    }, [])
+
+    const doAction = (action = '', e) => {
         e.preventDefault()
-
-        switch(action){
+        switch (action) {
             case 'signin':
-                alert('This need to be added')
-                console.log(guestId, guestPass)
-                Navigate('/guest')
-                break;
+                const data = {
+                    guestId: guestId,
+                    password: guestPass
+                }
+                setIsLoading(true)
 
+                axios.post(api.customer + api.login, data)
+                    .then(res => {
+                        if (res.data.message !== message.success) {
+                            alert('Wrong Credentials')
+                            setIsLoading(false)
+                        } else {
+                            const user = res.data.data;
+                            sessionStorage.setItem('user', JSON.stringify(user))
+                            setIsLoading(false)
+                            Navigate(api.guest)
+                        }
+                    })
+                    .catch(err => {
+                        setIsLoading(false)
+                        console.log(err)
+                    })
+                break;
             default:
         }
     }
+
+    const btnClass = "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+    const fieldClass = "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
 
     return (
         <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -42,9 +73,9 @@ const GuestLogin = () => {
                             <input
                                 type="text"
                                 required
-                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                className={fieldClass}
                                 placeholder="Phone Number"
-                                onChange={(e)=>setGuestId(e.target.value.trim())}
+                                onChange={(e) => setGuestId(e.target.value.trim())}
                             />
                         </div>
                         <div>
@@ -54,19 +85,27 @@ const GuestLogin = () => {
                             <input
                                 type="password"
                                 required
-                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                className={fieldClass}
                                 placeholder="Password"
-                                onChange={(e)=>setGuestPass(e.target.value.trim())}
+                                onChange={(e) => setGuestPass(e.target.value.trim())}
                             />
                         </div>
                     </div>
                     <div>
                         <button
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            onClick={(e)=>doAction('signin', e)}
-                        >   
-                            Sign in
+                            className={btnClass}
+                            onClick={(e) => doAction('signin', e)}
+                            disabled={isLoading === true ? 1 : 0}
+                        >
+                            {isLoading ? (
+                                <div className="flex items-center ">
+                                    <div className="h-3 w-3 bg-none border-2 border-red-300 animate-ping rounded-full mx-2" />
+                                    <span className="">Processing</span>
+                                </div>
+
+                            ) : 'Sign in'}
                         </button>
+
                     </div>
                 </form>
             </div>
