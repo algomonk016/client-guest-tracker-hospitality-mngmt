@@ -4,6 +4,8 @@ module.exports = {
     feedback: '/feedback',
     guest: '/guest',
     login: '/login',
+    new:'/new',
     reception: '/reception',
+    room: '/room',
     slash: '/',
 }
