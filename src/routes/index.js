@@ -16,6 +16,7 @@ import Customers from '../container/pages/customers'
 import FeedbackView from '../container/pages/feedback';
 import AddCustomer from '../container/pages/customers/AddCustomer';
 import ApiEndpoints from '../utils/API/ApiEndpoints';
+import CheckedOutCustomers from '../container/pages/checkedoutCustomers';
 
 const PageRoutes = () => {
     return (
@@ -39,6 +40,7 @@ const PageRoutes = () => {
                 <Route path={ApiEndpoints.reception} element={<Reception />} />
                 <Route path={ApiEndpoints.reception + ApiEndpoints.customer} element={<Customers /> } />
                 <Route path={ApiEndpoints.reception + ApiEndpoints.customer + ApiEndpoints.new} element={<AddCustomer /> } />
+                <Route path={ApiEndpoints.reception + ApiEndpoints.customer + ApiEndpoints.checkedOut} element={<CheckedOutCustomers /> } />
                 <Route path={ApiEndpoints.reception + ApiEndpoints.feedback} element={<FeedbackView /> } />
             </Routes>
         </Router>

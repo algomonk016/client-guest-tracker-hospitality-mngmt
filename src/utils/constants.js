@@ -11,4 +11,5 @@ export const constants = {
     iskeSaath: 'With him/her',
     action: 'Actions',
     rupee: '₹',
+    cost: 'Bill',
 }
