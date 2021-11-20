@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedbackSVG from '../../../assets/svg/FeedbackSVG'
 import UsersSVG from '../../../assets/svg/UsersSVG'
+import ApiEndpoints from '../../../utils/API/ApiEndpoints'
 import ReceptionOptions from './components/ReceptionOptions'
 
 const Reception = () => {
@@ -23,8 +24,8 @@ const Reception = () => {
                     </p>
                 </div>
                 <div className="flex flex-wrap -m-4 text-center justify-around">
-                    <ReceptionOptions svg={<UsersSVG />} title='Customers' to='customers' />
-                    <ReceptionOptions svg={<FeedbackSVG />} title='Feedbacks' to='feedbacks' /> 
+                    <ReceptionOptions svg={<UsersSVG />} title='Customers' to={ApiEndpoints.customer1} />
+                    <ReceptionOptions svg={<FeedbackSVG />} title='Feedbacks' to={ApiEndpoints.feedback1} /> 
                 </div>
             </div>
         </section>

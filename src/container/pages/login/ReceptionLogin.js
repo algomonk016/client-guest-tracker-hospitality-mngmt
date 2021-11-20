@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import api from '../../../utils/API/ApiEndpoints'
 import message from '../../../utils/messages'
@@ -11,8 +11,8 @@ const ReceptionLogin = () => {
     const [isLoading, setIsLoading] = useState(false)
     const Navigate = useNavigate()
 
-    useEffect(()=>{
-        if(sessionStorage.getItem('user')){
+    useEffect(() => {
+        if (sessionStorage.getItem('user')) {
             Navigate(api.reception)
         }
     }, [])
@@ -75,7 +75,7 @@ const ReceptionLogin = () => {
                                 required
                                 className={fieldClass}
                                 placeholder="Phone Number"
-                                onChange={(e)=>setEmpId(e.target.value.trim())}
+                                onChange={(e) => setEmpId(e.target.value.trim())}
                             />
                         </div>
                         <div>
@@ -87,7 +87,7 @@ const ReceptionLogin = () => {
                                 required
                                 className={fieldClass}
                                 placeholder="Password"
-                                onChange={(e)=>setEmpPass(e.target.value.trim())}
+                                onChange={(e) => setEmpPass(e.target.value.trim())}
                             />
                         </div>
                     </div>

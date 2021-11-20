@@ -9,5 +9,6 @@ export const constants = {
     sn: 'S.No',
     age: 'Age',
     iskeSaath: 'With him/her',
-    action: 'Actions'
+    action: 'Actions',
+    rupee: '₹',
 }

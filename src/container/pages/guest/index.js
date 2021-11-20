@@ -50,7 +50,7 @@ const Guest = () => {
                         img={food}
                         message='People who love to eat are always the best people'
                         button='Order Some Food'
-                        to='restaurant'
+                        to={'restaurant'}
                     />
                     <Options
                         category='Hospitality'

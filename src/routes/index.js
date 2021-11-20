@@ -15,30 +15,31 @@ import Reception from '../container/pages/reception';
 import Customers from '../container/pages/customers'
 import FeedbackView from '../container/pages/feedback';
 import AddCustomer from '../container/pages/customers/AddCustomer';
+import ApiEndpoints from '../utils/API/ApiEndpoints';
 
 const PageRoutes = () => {
     return (
         <Router>
             <Routes>
                 {/* login */}
-                <Route path="/" element={<About />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/login/guest" element={<GuestLogin />} />
-                <Route path="/login/reception" element={<ReceptionLogin />} />
+                <Route path={ApiEndpoints.slash} element={<About />} />
+                <Route path={ApiEndpoints.login} element={<Login />} />
+                <Route path={ApiEndpoints.login + ApiEndpoints.guest} element={<GuestLogin />} />
+                <Route path={ApiEndpoints.login + ApiEndpoints.reception} element={<ReceptionLogin />} />
 
                 {/* landing pages */}
-                <Route path="/guest" element={<Guest />} />
-                <Route path="/reception" element={<Reception />} />
+                <Route path={ApiEndpoints.guest} element={<Guest />} />
+                <Route path={ApiEndpoints.reception} element={<Reception />} />
 
                 {/* for guest */}
-                <Route path="/guest/feedback" element={<Feedback />} />
-                <Route path="/guest/restaurant" element={<Restaurant />} />
+                <Route path={ApiEndpoints.guest + ApiEndpoints.feedback} element={<Feedback />} />
+                <Route path={ApiEndpoints.guest + ApiEndpoints.restaurant} element={<Restaurant />} />
 
                 {/* for recepetion */}
-                <Route path='/reception' element={<Reception />} />
-                <Route path='/reception/customers' element={<Customers /> } />
-                <Route path='/reception/customers/new' element={<AddCustomer /> } />
-                <Route path='/reception/feedbacks' element={<FeedbackView /> } />
+                <Route path={ApiEndpoints.reception} element={<Reception />} />
+                <Route path={ApiEndpoints.reception + ApiEndpoints.customer} element={<Customers /> } />
+                <Route path={ApiEndpoints.reception + ApiEndpoints.customer + ApiEndpoints.new} element={<AddCustomer /> } />
+                <Route path={ApiEndpoints.reception + ApiEndpoints.feedback} element={<FeedbackView /> } />
             </Routes>
         </Router>
     )

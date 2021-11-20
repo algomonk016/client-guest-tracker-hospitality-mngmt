@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ApiEndpoints from '../../../../utils/API/ApiEndpoints'
 
 const LoginOption = ({
     img=null, 
@@ -24,7 +25,7 @@ const LoginOption = ({
             
             <Link 
                 className="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded" 
-                to={guest===true ? '/login/guest':'/login/reception' }
+                to={guest===true ? (ApiEndpoints.login+ApiEndpoints.guest):(ApiEndpoints.login+ApiEndpoints.reception) }
             >
                 {guest ? 'Guest ': 'Reception '} Login
             </Link>
