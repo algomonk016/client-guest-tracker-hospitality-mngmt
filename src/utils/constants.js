@@ -12,4 +12,6 @@ export const constants = {
     action: 'Actions',
     rupee: '₹',
     cost: 'Bill',
+    feedback: 'Feedback',
+    rating: 'Rating'
 }
