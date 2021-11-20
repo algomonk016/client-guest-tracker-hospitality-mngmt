@@ -83,6 +83,10 @@ const Customers = () => {
                     <Link to={api.checkedOut1} className="bg-pink-300 text-pink-700 px-3 py-2 rounded hover:bg-pink-400  hover:text-pink-800 border-2 border-pink-300 shadow mr-5">
                         Checked Out Guests
                     </Link>
+
+                    <Link to={api.reception} className="bg-gray-300 text-gray-700 px-3 py-2 rounded hover:bg-gray-400  hover:text-gray-800 border-2 border-gray-300 shadow mr-5">
+                        Go Back
+                    </Link>
                 </div>
 
             </div>
