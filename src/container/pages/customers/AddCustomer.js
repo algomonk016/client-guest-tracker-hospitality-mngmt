@@ -41,6 +41,7 @@ const AddCustomer = () => {
         IsOccupied: '',
         RoomType: '',
     }])
+    const [RoomCount, setRoomCount] = useState(0)
 
     // useEffect(()=>{
     //     console.log('Selected', RoomSelected)
@@ -123,12 +124,14 @@ const AddCustomer = () => {
             case 'getRooms':
                 axios.get(api.reception + api.room)
                     .then(response => {
+                        console.log('response', response)
                         if (response.data.message !== message.success) {
                             alert('something went wrong, please try later')
                             return
                         }
 
                         setRooms(response.data.data)
+                        setRoomCount(response.data.roomCount)
                     })
                     .catch(error => {
                         console.log(error)
@@ -314,6 +317,9 @@ const AddCustomer = () => {
                             >
                                 Select Room
                             </button>
+
+                            <span> {RoomCount} Rooms available </span>
+
                         </div>
                     </div>
                 </div>
