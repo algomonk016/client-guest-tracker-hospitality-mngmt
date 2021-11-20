@@ -111,6 +111,8 @@ const AddCustomer = () => {
                         if(response.data.message === message.success){
                             alert('Data Added')
                             Navigate(api.reception+api.customer)
+                        } else{
+                            alert('Operation Failed')
                         }
                     })
                     .catch(error => {
