@@ -15,12 +15,12 @@ const LoginOption = ({
                     src={ img !== null ? img : "https://dummyimage.com/1201x501" } 
                 />
             </div>
-            
             <h2 
                 className="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"
             >
                 { guest ? 'Guest' : 'Receptionist' } Login
             </h2>
+            
             <p className="leading-relaxed text-base">  </p>
             
             <Link 
