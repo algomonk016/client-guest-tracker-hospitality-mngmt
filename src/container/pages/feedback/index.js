@@ -49,7 +49,7 @@ const FeedbackView = () => {
                 </h3>
 
                 <div className="flex justify-between mb-2">
-                    <Link to={api.reception + api.customer} className="bg-gray-300 text-gray-700 px-3 py-2 rounded hover:bg-gray-400  hover:text-gray-800 border-2 border-gray-300 shadow mr-5">
+                    <Link to={api.reception} className="bg-gray-300 text-gray-700 px-3 py-2 rounded hover:bg-gray-400  hover:text-gray-800 border-2 border-gray-300 shadow mr-5">
                         Go Back
                     </Link>
                 </div>
@@ -98,7 +98,6 @@ const FeedbackView = () => {
                         }
                     </tbody>
                 </table>
-
             </div>
         </div>
     )

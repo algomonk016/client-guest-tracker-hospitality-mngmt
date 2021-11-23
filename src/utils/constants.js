@@ -13,5 +13,6 @@ export const constants = {
     rupee: '₹',
     cost: 'Bill',
     feedback: 'Feedback',
-    rating: 'Rating'
+    rating: 'Rating',
+    projectName: 'Guest Tracker & Hospitality Management'
 }

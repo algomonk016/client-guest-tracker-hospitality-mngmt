@@ -53,7 +53,7 @@ const ReceptionLogin = () => {
     const fieldClass = "appearance-none rounded-none relative block w-full px-3 py-2 border-0 border-gray-300 placeholder-gray-500 text-gray-900 shadow rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
 
     return (
-        <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-center pb-12 px-4 sm:px-6 lg:px-8 bg-purple-200 h-screen">
             <div className="max-w-md w-full space-y-8 bg-gray-50 border-0 shadow rounded p-10 mt-10">
                 <div className="mb-5">
                     <img
@@ -74,7 +74,7 @@ const ReceptionLogin = () => {
                                 type="text"
                                 required
                                 className={fieldClass}
-                                placeholder="Phone Number"
+                                placeholder="User Id"
                                 onChange={(e) => setEmpId(e.target.value.trim())}
                             />
                         </div>
