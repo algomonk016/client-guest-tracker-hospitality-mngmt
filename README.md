@@ -1,10 +1,11 @@
 <h1 align="center"> Guest Tracker and Hospitality Management System </h1>
 
+> [Link For Back-end Code](https://github.com/algomonk016/server-guest-tracker-hospitality-mngmt)
+
 ### About This project
 - Guest Tracker and Hospitality Management system provides all the action that are happened in daily operation of any hotel
 - It mainly deals with Booking of room, Allocation details of rooms, Room Attendee details, Room rent, Billing, Room vacating, Customer Feedback.
-
-
+- Build using ReactJs + TailwindCSS, NodeJs, ExpressJs, MySql
 
 ### Details of Modules
 Guest checkin and room booking
